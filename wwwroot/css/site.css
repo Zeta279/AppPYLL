@@ -1,0 +1,30 @@
+body{
+    min-height: 100vh;
+}
+
+main {
+    border: 1px gray solid;
+}
+
+.bg-dark-custom {
+    background-color: #0e1629;
+}
+
+.sidebar .nav-link {
+    padding: 0.8rem 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sidebar {
+    width: 280px;
+}
+
+.sidebar .nav-link:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white !important;
+}
+
+#wrapper {
+    overflow-x: hidden;
+}
