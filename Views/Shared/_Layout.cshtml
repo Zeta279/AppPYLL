@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,10 +13,11 @@
 
     <div class="d-flex" id="wrapper">
         <div class="sidebar bg-dark-custom text-white p-3 vh-100 d-flex flex-column">
-
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <i class="bi bi-building fs-4 me-2"></i> <span class="fs-5 fw-bold">Postal & Logística Lomas</span>
+            <a asp-controller="Home" class="d-flex text-decoration-none">
+                <img src="@Url.Content("~/img/sin_fondo.png")" class="logo" />
+                <span class="text-white ms-3">Postal & Logística Lomas</span>
             </a>
+            
             <hr>
 
             <ul class="nav nav-pills flex-column mb-auto">
@@ -32,13 +33,13 @@
             </ul>
 
             <div class="dropdown mt-auto">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center me-2" style="width: 32px; height: 32px;">
-                        <span>JD</span>
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="user-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center me-2 nombre-usuario">
+                        <span>WA</span>
                     </div>
-                    <strong>John Doe</strong>
+                    <strong>Walter Acosta</strong>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="user-dropdown">
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
@@ -47,7 +48,7 @@
             </div>
         </div>
 
-        <main class="container-fluid">
+        <main class="w-100 p-5">
             @RenderBody()
         </main>
     </div>

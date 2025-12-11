@@ -1,8 +1,133 @@
-﻿@{
+﻿@using AppPYLL.Models;
 
-}
-
-<div class="container text-center">
-    <h1>Postal & Logística Lomas</h1>
+<div>
+    <h1 class="display-5">Postal & Logística Lomas</h1>
     <p class="text-secondary">Bienvenido, Walter</p>
+    <div class="row">
+        <div class="card col me-4">
+            <div class="card-body">
+                <div class="main-card-icon icon-ingreso">
+                    <svg>
+                        <use href="@Url.Content("~/svg/dollar-sign-solid-full.svg")" />
+                    </svg>
+                </div>
+                <h4 class="card-title">@ViewData["ingresos"]</h4>
+                <p class="card-text text-muted">Ingresos</p>
+            </div>
+        </div>
+
+        <div class="card col me-4">
+            <div class="card-body">
+                <div class="main-card-icon icon-egreso">
+                    <svg>
+                        <use href="@Url.Content("~/svg/dollar-sign-solid-full.svg")" />
+                    </svg>
+                </div>
+                <h4 class="card-title">@ViewData["egresos"]</h4>
+                <p class="card-text text-muted">Egresos</p>
+            </div>
+        </div>
+
+        <div class="card col me-4">
+            <div class="card-body">
+                <div class="main-card-icon icon-ganancia">
+                    <svg>
+                        <use href="@Url.Content("~/svg/sack-dollar-solid-full.svg")" />
+                    </svg>
+                </div>
+                <h4 class="card-title">@ViewData["diferencia"]</h4>
+                <p class="card-text text-muted">Ganancia neta</p>
+            </div>
+        </div>
+
+        <div class="card col">
+            <div class="card-body">
+                <div class="main-card-icon icon-clientes">
+                    <svg>
+                        <use href="@Url.Content("~/svg/user-regular-full.svg")" />
+                    </svg>
+                </div>
+                <h4 class="card-title">@ViewData["clientes"]</h4>
+                <p class="card-text text-muted">Clientes registrados</p>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-8 card me-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-4 mt-2">
+                    <h4>Transacciones recientes</h4>
+                    <a href="#" class="text-decoration-none">Ver todas</a>
+                </div>
+                <div class="transacciones">
+                    @foreach (var pago in ViewData["pagos"] as List<Pago>)
+                    {
+                        <div class="border-bottom mb-4">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex">
+                                    @if (pago.Positivo)
+                                    {
+                                        <svg class="positivo my-2 me-3">
+                                            <use href="@Url.Content("~/svg/angle-up-solid-full.svg")" />
+                                        </svg>
+                                    }
+                                    else
+                                    {
+                                        <svg class="negativo my-2 me-3">
+                                            <use href="@Url.Content("~/svg/angle-down-solid-full.svg")" />
+                                        </svg>
+                                    }
+                                    <div class="d-flex flex-column">
+                                        <p class="mb-1">@pago.Descripcion</p>
+                                        <p class="text-muted">@pago.FechaPago.ToString("dd/MM/yyyy")</p>
+                                    </div>
+                                </div>
+                                <p class="@(pago.Positivo ? "text-success" : "text-danger")">@(pago.Positivo ? "+ " : "- ")@pago.Monto.ToString("C2")</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col card">
+            <div class="card-body">
+                <h4 class="mb-4 mt-2">Acciones rápidas</h4>
+                <div class="acciones">
+                    <a class="btn btn-primary w-100 text-start mb-3 py-2">
+                        <div class="d-flex">
+                            <svg>
+                                <use href="@Url.Content("~/svg/sack-dollar-solid-full.svg")" />
+                            </svg>
+                            <p>Ver movimientos</p>
+                        </div>
+                    </a>
+                    <a class="btn btn-success w-100 text-start mb-3 py-2">
+                        <div class="d-flex">
+                            <svg>
+                                <use href="@Url.Content("~/svg/angle-up-solid-full.svg")" />
+                            </svg>
+                            <p>Añadir ingreso</p>
+                        </div>
+                    </a>
+                    <a class="btn btn-danger w-100 text-start mb-3 py-2">
+                        <div class="d-flex">
+                            <svg>
+                                <use href="@Url.Content("~/svg/angle-down-solid-full.svg")" />
+                            </svg>
+                            <p>Añadir egreso</p>
+                        </div>
+                    </a>
+                    <a class="btn btn-secondary w-100 text-start mb-3 py-2">
+                        <div class="d-flex">
+                            <svg>
+                                <use href="@Url.Content("~/svg/user-regular-full.svg")" />
+                            </svg>
+                            <p>Registrar cliente</p>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </div>

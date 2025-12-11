@@ -4,6 +4,11 @@ body{
 
 main {
     border: 1px gray solid;
+    background-color: rgb(239, 239, 239);
+}
+
+.logo{
+    width: 50px;
 }
 
 .bg-dark-custom {
@@ -27,4 +32,86 @@ main {
 
 #wrapper {
     overflow-x: hidden;
+}
+
+.nombre-usuario{
+    width: 32px;
+    height: 32px;
+}
+
+.main-card-icon{
+    border-radius: 10px;
+    padding: 7px;
+    margin: 15px 0;
+    width: fit-content;
+}
+
+.main-card-icon svg{
+    width: 40px;
+    height: 40px;
+}
+
+.icon-ingreso{
+    background-color: #47c542;
+    fill: rgb(38, 99, 26);
+    box-shadow: #47c542 0 0 10px;
+}
+
+.icon-egreso{
+    background-color: #ca3838;
+    fill: rgb(112, 33, 33);
+    box-shadow: #ca3838 0 0 10px;
+}
+
+.icon-ganancia{
+    background-color: #6179e6;
+    fill: rgb(53, 65, 134);
+    box-shadow: #6179e6 0 0 10px;
+}
+
+.icon-clientes{
+    background-color: #ece7a1;
+    fill: #9c9641;
+    box-shadow: #ece7a1 0 0 10px;
+}
+
+.transacciones div:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+}
+
+.transacciones svg {
+    border-radius: 10px;
+    padding: 7px;
+    margin: 15px 0;
+    width: fit-content;
+    width: 40px;
+    height: 40px;
+}
+
+.positivo {
+    background-color: #47c542;
+    fill: rgb(38, 99, 26);
+    box-shadow: #47c542 0 0 10px;
+}
+
+.negativo {
+    background-color: #ca3838;
+    fill: rgb(112, 33, 33);
+    box-shadow: #ca3838 0 0 10px;
+}
+
+.acciones svg{
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.acciones p{
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.acciones a div{
+    align-items: center;
 }
